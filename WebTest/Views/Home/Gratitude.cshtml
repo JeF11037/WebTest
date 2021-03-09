@@ -1,0 +1,25 @@
+﻿@model WebTest.Models.GuestModels
+
+@{
+    ViewBag.Title = "Gratitude";
+}
+
+<div>
+    <p>Thank You, @Model.Name</p>
+</div>
+<div>
+    @if (Model.WillAttend == true)
+    {
+        @: We are honored to meet you.
+        <img src="~/Images/yes.jpg" class="img-rounded">
+        <div>
+            @Html.ActionLink("Send me a reminder", "SendReminder", "Home", new { email = Model.Email }, new { @class = "btn btn-success" })
+        </div>
+    }
+    else
+    {
+        @: So, maybe next time.
+        <img src="~/Images/no.jpg" class="img-rounded">
+    }
+    @ViewBag.Message
+</div>

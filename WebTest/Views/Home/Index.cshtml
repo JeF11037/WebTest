@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div class="jumbotron">
+    <h1>Hello Samurai, we have city to burn.</h1>
+</div>
+
+<div class="container">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="row">
+            <h2> And it is @ViewBag.GetDayTime</h2>
+            <p>@ViewBag.Message</p>
+        </div>
+        <div class="row">
+            <img src="~/Images/hello.jpg" class="img-rounded">
+        </div>
+        <div class="row">
+            <br>
+            @Html.ActionLink("Get an Interview", "Interview", "Interview", new { @class = "btn btn-success" })
+        </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
