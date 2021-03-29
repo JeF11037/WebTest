@@ -3,16 +3,15 @@
     ViewBag.Title = "Interview";
 }
 
-@model WebTest.Models.GuestModels
+@model WebTest.Models.Guest
 
 <h2>Interview</h2>
 
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary()
-    <p>Write name : @Html.TextBoxFor(el => el.Name)</p>
-    <p>Write email : @Html.TextBoxFor(el => el.Email)</p>
-    <p>Write phone : @Html.TextBoxFor(el => el.Phone)</p>
+    <p>Write name : @Html.TextBoxFor(el => el.Name, new { @Value = @ViewBag.Name })</p>
+    <p>Write email : @Html.TextBoxFor(el => el.Email, new { @Value = @ViewBag.Email })</p>
     <p>
         Get email notification: 
         @Html.DropDownListFor(el => el.WillAttend,
